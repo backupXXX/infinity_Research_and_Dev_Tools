@@ -16936,6 +16936,673 @@ ID Map  X  Y  Z  Name
 1683 1 1620.946 624.701 32.897 Sunwell - Quel'Delar Entrance  
 1691 0 -13205.573 272.703 21.857 AAA - Arena (Dev Test)  
 ======================================================================================================
+FRom ytdb 
+gossip menu 
 
+Gossip menu option
+From YTDB DataBase
+
+Full tables of the database mangos .
+
+
+Table `gossip_menu_option` 
+
+This table is used to describe the options menu gossip. 
+
+
+Structure 
+
+Field  Type  Attributes  Null  Key  Default  Comments  
+menu_id  smallint (6)  unsigned  NO  PRI  0   
+id  smallint (6))  unsigned  NO  PRI  0   
+option_icon  mediumint (8)  unsigned  NO   0   
+option_text  text       
+option_id  tinyint (3)  unsigned  NO   0   
+npc_option_npcflag  int (10)  unsigned  NO   0   
+action_menu_id  mediumint (8)  unsigned  NO   0   
+action_poi_id  mediumint (8)  unsigned  NO   0   
+action_script_id  mediumint (8)  unsigned  NO   0   
+box_coded  tinyint (3)  unsigned  NO   0   
+box_money  int (11)  unsigned  NO   0   
+box_text  text       
+cond_1  tinyint (3)  unsigned  NO   0   
+cond_1_val_1  mediumint (8)  unsigned  NO   0   
+cond_1_val_2  mediumint (8)  unsigned  NO   0   
+cond_2  tinyint (3)  unsigned  NO   0   
+cond_2_val_1  mediumint (8)  unsigned  NO   0   
+cond_2_val_2  mediumint (8)  unsigned  NO   0   
+cond_3  tinyint (3)  unsigned  NO   0   
+cond_3_val_1  mediumint (8)  unsigned  NO   0   
+cond_3_val_2  mediumint (8)  unsigned  NO   0   
+
+
+Field Descriptions 
+
+menu_id
+The ID of the menu from gossip_menu.entry 
+
+id
+Serial number of the submenu. 
+
+option_icon
+Icon identifier. 
+
+option_text
+Text menu. 
+
+option_id
+Pointer actions. 
+
+npc_option_npcflag
+Flag of the substance. See Creature_template.npcflag 
+
+action_menu_id
+Menu, which will be called when you click on this menu. See gossip_menu.entry 
+
+action_poi_id
+Point identifier, which will be displayed on the map in-game client when you click on this menu. See Points_of_interest.entry 
+
+action_script_id
+Identifier Gossip-script. See gossip_scripts.id script will be invoked when you click on this menu. If the field action_menu_id =- 1, the Gossip menu closes automatically after a release script.
+
+box_coded
+box_money
+The amount of money that will take away a player when you click this menu item, in copper. 
+
+box_text
+Text to be displayed on the screen to confirm the pressing, if the field box_money filled (if this field is empty, the money will be removed without confirmation).
+
+cond_1-3
+cond_x_val_x
+Conditions for the operation of the menu options. See Condition.condition 
+
+======================================================================================
+Npc gossip
+From YTDB DataBase
+Jump to: navigation , search
+Contents [ remove ]
+1  npc_guid
+2  textid
+ 
+ 
+
+Full tables of the database mangos .
+
+
+Table `npc_gossip` 
+
+This table gossip binds to the substance of the text. When you click on a creature, it says something more than just "Hi $ N".
+
+
+Structure 
+
+Field  Type  Attributes  Null  Key  Default  Comments  
+npc_guid  int (10)  unsigned  NO  PRI  0   
+textid  mediumint (8)  unsigned  NO   0   
+
+
+Field Descriptions 
+
+npc_guid
+The ID of the substance of creature.guid .
+
+textid
+The ID of the text of npc_text.ID .
+
+To make the creature say gossip text, you must set creature_template.npcflag = 1.
+
+========================================================================================
+Npc text
+From YTDB DataBase
+Jump to: navigation , search
+Contents [ remove ]
+1  ID
+2  textA_B
+3  textA_C
+4  lang
+5  prob
+6  emA_B
+ 
+ 
+
+Full tables of the database mangos .
+
+
+Table `npc_text` 
+
+This table contains the texts of which are used to gossip. 
+
+
+Structure 
+
+Field  Type  Attributes  Null  Key  Default  Comments  
+ID  mediumint (8)  unsigned  NO  PRI  0   
+text0_0  longtext       
+text0_1  longtext       
+lang0  tinyint (3)  unsigned  NO   0   
+prob0  float   NO   0   
+em0_0  smallint (5)  unsigned  NO   0   
+em0_1  smallint (5)  unsigned  NO   0   
+em0_2  smallint (5)  unsigned  NO   0   
+em0_3  smallint (5)  unsigned  NO   0   
+em0_4  smallint (5)  unsigned  NO   0   
+em0_5  smallint (5)  unsigned  NO   0   
+text1_0  longtext       
+text1_1  longtext       
+lang1  tinyint (3)  unsigned  NO   0   
+prob1  float   NO   0   
+em1_0  smallint (5)  unsigned  NO   0   
+em1_1  smallint (5)  unsigned  NO   0   
+em1_2  smallint (5)  unsigned  NO   0   
+em1_3  smallint (5)  unsigned  NO   0   
+em1_4  smallint (5)  unsigned  NO   0   
+em1_5  smallint (5)  unsigned  NO   0   
+text2_0  longtext       
+text2_1  longtext       
+lang2  tinyint (3)  unsigned  NO   0   
+prob2  float   NO   0   
+em2_0  smallint (5)  unsigned  NO   0   
+em2_1  smallint (5)  unsigned  NO   0   
+em2_2  smallint (5)  unsigned  NO   0   
+em2_3  smallint (5)  unsigned  NO   0   
+em2_4  smallint (5)  unsigned  NO   0   
+em2_5  smallint (5)  unsigned  NO   0   
+text3_0  longtext       
+text3_1  longtext       
+lang3  tinyint (3)  unsigned  NO   0   
+prob3  float   NO   0   
+em3_0  smallint (5)  unsigned  NO   0   
+em3_1  smallint (5)  unsigned  NO   0   
+em3_2  smallint (5)  unsigned  NO   0   
+em3_3  smallint (5)  unsigned  NO   0   
+em3_4  smallint (5)  unsigned  NO   0   
+em3_5  smallint (5)  unsigned  NO   0   
+text4_0  longtext       
+text4_1  longtext       
+lang4  tinyint (3)  unsigned  NO   0   
+prob4  float   NO   0   
+em4_0  smallint (5)  unsigned  NO   0   
+em4_1  smallint (5)  unsigned  NO   0   
+em4_2  smallint (5)  unsigned  NO   0   
+em4_3  smallint (5)  unsigned  NO   0   
+em4_4  smallint (5)  unsigned  NO   0   
+em4_5  smallint (5)  unsigned  NO   0   
+text5_0  longtext       
+text5_1  longtext       
+lang5  tinyint (3)  unsigned  NO   0   
+prob5  float   NO   0   
+em5_0  smallint (5)  unsigned  NO   0   
+em5_1  smallint (5)  unsigned  NO   0   
+em5_2  smallint (5)  unsigned  NO   0   
+em5_3  smallint (5)  unsigned  NO   0   
+em5_4  smallint (5)  unsigned  NO   0   
+em5_5  smallint (5)  unsigned  NO   0   
+text6_0  longtext       
+text6_1  longtext       
+lang6  tinyint (3)  unsigned  NO   0   
+prob6  float   NO   0   
+em6_0  smallint (5)  unsigned  NO   0   
+em6_1  smallint (5)  unsigned  NO   0   
+em6_2  smallint (5)  unsigned  NO   0   
+em6_3  smallint (5)  unsigned  NO   0   
+em6_4  smallint (5)  unsigned  NO   0   
+em6_5  smallint (5)  unsigned  NO   0   
+text7_0  longtext       
+text7_1  longtext       
+lang7  tinyint (3)  unsigned  NO   0   
+prob7  float   NO   0   
+em7_0  smallint (5)  unsigned  NO   0   
+em7_1  smallint (5)  unsigned  NO   0   
+em7_2  smallint (5)  unsigned  NO   0   
+em7_3  smallint (5)  unsigned  NO   0   
+em7_4  smallint (5)  unsigned  NO   0   
+em7_5  smallint (5)  unsigned  NO   0   
+
+
+Field Descriptions 
+
+ID
+The ID of the text. Taken from the WDB cache.
+
+textA_B
+Is this the first choice of locale 0? 
+
+textA_C
+Second choice? 
+
+lang
+Language of the text in the game 
+
+prob
+The likelihood that NPC will deliver the text 
+
+emA_B
+Emote on greet? 
+
+
+=====================================================================
+Gossip menu
+From YTDB DataBase
+Jump to: navigation , search
+Contents [ remove ]
+1  entry
+2  text_id
+3  cond_x
+4  cond_x_val_x
+ 
+ 
+
+Full tables of the database mangos .
+
+
+Table `gossip_menu` 
+
+This table is used to describe a gossip menu. 
+
+
+
+
+Structure 
+
+Field  Type  Attributes  Null  Key  Default  Comments  
+entry  smallint (6)  unsigned  NO  PRI  0   
+text_id  mediumint (8)  unsigned  NO  PRI  0   
+cond_1  tinyint (3)  unsigned  NO   0   
+cond_1_val_1  mediumint (8)  unsigned  NO   0   
+cond_1_val_2  mediumint (8)  unsigned  NO   0   
+cond_2  tinyint (3)  unsigned  NO   0   
+cond_2_val_1  mediumint (8)  unsigned  NO   0   
+cond_2_val_2  mediumint (8)  unsigned  NO   0   
+
+
+Field Descriptions 
+
+entry
+The ID of the menu. See creature_template.gossip_menu_id .
+
+text_id
+The ID of the menu text. See npc_text.ID .
+
+cond_x
+cond_x_val_x
+Terms used in the menu. See Condition.condition .
+====================================================================
+Npc spellclick spells
+From YTDB DataBase
+Jump to: navigation , search
+Contents [ remove ]
+1  npc_entry
+2  spell_id
+3  quest_start
+4  quest_start_active
+5  quest_end
+6  cast_flags
+ 
+ 
+
+Full tables of the database mangos .
+
+
+Table `npc_spellclick_spells` 
+
+This table contains information on spells to be Cast in obtaining CMSG_SPELLCLICK. 
+
+
+Structure 
+
+Field  Type  Attributes  Null  Key  Default  Comments  
+npc_entry  int  unsigned  NO    reference to creature_template  
+spell_id  int  unsigned  NO    spell which should be casted  
+quest_start  mediumint (8)  unsigned  NO    reference to quest_template  
+quest_start_active  tinyint (1)  unsigned  NO   0   
+quest_end  mediumint (8)  unsigned  NO   0   
+cast_flags  tinyint (3)  unsigned  NO    first bit defines caster: 1 = player, 0 = creature; second bit defines target, same mapping as caster bit  
+
+
+
+
+Field Descriptions 
+
+npc_entry
+The ID of the substance of Creature_template # entry 
+
+spell_id
+ID of spells, which should be to cast. Note that a few quests there are more than one spell per click. Note that for several quests there are more than one spell per click. In the plans for the future such as cast plans for the future: the creation of a puppy Snowfall Glade to create the object in the player's inventory and for the Future: Create Snowfall Glade Pup Cover to despawn (remove) creatures of the world.
+
+This creates the illusion that the creature has been looted. 
+
+quest_start
+Same Spell_area # quest_start .
+
+quest_start_active
+Same Spell_area # quest_start_active .
+
+quest_end
+Same Spell_area # quest_end .
+
+cast_flags
+For each spellclick-e player interacts with the substance. This field specifies any man cast a spell.
+
+Least significant bit determines caste, the senior - the purpose of: 1 = player 0 = being. 
+
+Variants of the values listed in the table below: 
+
+Target  Caster  cast_flags value  
+Creature  Creature  0  
+Creature  Player  1  
+Player  Creature  2  
+Player  Player  3  
+
+============================================================================================
+All scripts
+From YTDB DataBase
+(Redirected from Gossip scripts )
+Jump to: navigation , search
+Contents [ remove ]
+1  id
+2  delay
+3  command
+4  OtherFields
+5  comments
+ 
+ 
+
+Full tables of the database mangos .
+
+
+Table form `* _scripts` 
+
+This table format is used for 7 different tables to control the features script, activated by different actions: 
+
+gameobject_scripts: Contains information to activate the scripts designed for game objects (OI) type GAMEOBJECT_TYPE_BUTTON (1).
+spell_scripts: Contains information to enable scripts designed to spell with the effect of SPELL_EFFECT_SCRIPT_EFFECT (77).
+quest_start_scripts: Contains information to activate the script after the player took the specified quest.
+quest_end_scripts: Contains information to activate the script after the player passed the specified quest.
+event_scripts: Contains scripts activated by whenever a specified event occurs, whether it is the object or effect spell SPELL_EFFECT_SEND_EVENT (61).
+gossip_scripts: Contains scripts activated by whenever a specified event occurs in the Gossip menu.
+creature_movement_scripts: Contains scripts activated by whenever you move the NPC.
+Note: the scripts have in this table may be more than one entry, because the script can do more than just one action. Also, every action that can make a script, you can specify a separate delay for him. In this case, the kernel activates the appropriate action after proper delay.
+
+
+Structure 
+
+Field  Type  Attributes  Null  Key  Default  Comments  
+id  mediumint (8)  unsigned  NO   0   
+delay  int (10)  unsigned  NO   0   
+command  mediumint (8)  unsigned  NO   0   
+datalong  mediumint (8)  unsigned  NO   0   
+datalong2  int (10)  unsigned  NO   0   
+datalong3  int (10)  unsigned  NO   0   
+datalong4  int (10)  unsigned  NO   0   
+data_flags  tinyint (3)  unsigned  NO   0   
+dataint  int (11)   NO   0   
+dataint2  int (11)   NO   0   
+dataint3  int (11)   NO   0   
+dataint4  int (11)   NO   0   
+x  float   NO   0   
+y  float   NO   0   
+z  float   NO   0   
+o  float   NO   0   
+comments  varchar (255)   NO   0   
+
+
+Field Descriptions 
+
+id
+For gameobject_scripts , is a global number (GUID) buttons / levers. Look gameobject.guid .
+For spell_scripts , is the number of spells. Look Spell.dbc
+For quest_ * _scripts , this number is taken from StartScript or CompleteScript in the table with patterns of quests.
+For event_scripts , a number of events. Currently there is no complete list of events. In any case, the numbers of events are taken directly from the WDB data of game objects (IO), or of the effects of spells. If the game object (IO) and the spell activates the same event, the record numbers will match.
+For gossip_scripts , this number is taken from action_script_id table with templates menu.
+For creature_movement_scripts , this number is taken from script_id table with the points of movement of creatures.
+
+delay
+Delay in seconds before the script is activated. 0 = once.
+
+command
+The type of action script after delay seconds. The value of this field affects the way the need to fill in the fields nearby.
+
+You can use these commands: 
+
+Command  Name  Description  
+0  TALK  Say / whisper / shout / text emotion.  
+1  EMOTE  Play the emotion of a creature.  
+2  FIELD_SET  Change the value of the index of the player.  
+3  MOVE_TO  Move an existing address.  
+4  FLAG_SET  Includes bits in the flags field for the index of the player.  
+5  FLAG_REMOVE  Turns off the bits in the flags field for the index of the player.  
+6  TELEPORT_TO  Teleport a player into the location.  
+7  QUEST_EXPLORED  Counted for the opening of the quest.  
+8  KILL_CREDIT  Counted against the killing for a quest.  
+9  RESPAWN_GAMEOBJECT  Spawns nezaspavnennoe GO.  
+10  TEMP_SUMMON_CREATURE  Temporarily causing substance.  
+11  OPEN_DOOR  Opens the door. (Type == 0). 
+12  CLOSE_DOOR  Closes the door. (Type == 0). 
+13  ACTIVATE_OBJECT  Activates the object.  
+14  REMOVE_AURA  Removes the aura of super-imposed spell.  
+15  CAST_SPELL  Cast the spell.  
+16  PLAY_SOUND  Playing sound.  
+17  CREATE_ITEM  Creates an object.  
+18  DESPAWN_SELF  Despawn NPC delayed.  
+19  PLAY_MOVIE  Video shows.  
+20  MOVEMENT  Starts to move, or replaces the type.  
+21  SET_ACTIVEOBJECT   
+22  SET_FACTION  Change the fraction of substance.  
+23  MORPH_TO_ENTRY_OR_MODEL   
+24  MOUNT_TO_ENTRY_OR_MODEL   
+25  SET_RUN  Making the creature to escape.  
+OtherFields
+Depending on what command was used, the meaning and use for the following fields varies. 
+
+SCRIPT_COMMAND_TALK = 0 
+datalong: 0 = say, 1 = whisper, 2 = yell, 3 = text emote 
+datalong2: creature entry (searching for a buddy, closest to source) 
+datalong3: creature search radius 
+datalong4: Lang. 
+#  Internal Name  Description  
+0  UNIVERSAL  Text in this language is understood by ALL Races.  
+1  ORCISH  Text in this language is understood ONLY by Horde Races.  
+2  DARNASSIAN  Text in this language is understood ONLY by the Night Elf Race.  
+3  TAURAHE  Text in this language is understood ONLY by the Tauren Race.  
+6  DWARVISH  Text in this language is understood ONLY by the Dwarf Race.  
+7  COMMON  Text in this language is understood ONLY by Alliance Races.  
+8  DEMONIC  Text in this language is understood ONLY by the Demon Race (Not Implimented).  
+9  TITAN  This language was used by Sargeras to speak with other Titians (Not Implemented).  
+10  THALASSIAN  Text in this language is understood ONLY by the Blood Elf Race.  
+11  DRACONIC  Text in this language is understood ONLY by the Dragon Race.  
+12  KALIMAG  Text will display as Kalimag (not readable by players, language of all elementals)  
+13  GNOMISH  Text in this language is understood ONLY by the Gnome Race.  
+14  TROLL  Text in this language is understood ONLY by the Troll Race.  
+33  GUTTERSPEAK  Text in this language is understood ONLY by the Undead Race.  
+35  DRAENEI  Text in this language is understood ONLY by the Draenai Race.  
+36  ZOMBIE  (Not currently used?)  
+37  GNOMISH BINARY  Binary language used by Alliance when drinking Binary Brew  
+38  GOBLIN BINARY  Binary language used by Horce when drinking Binary Brew  
+
+
+data_flags: 
+flag  value  
+flag_target_player_as_source  0x01  
+flag_original_source_as_target  0x02  
+flag_buddy_as_target  0x04  
+
+
+dataint-dataint4: The ID of the text, which will be pronounced. See db_script_string . The identifier must be in the range of 2000000000 to 2000010000.
+dataint2-dataint4: Option to select random text. 
+
+
+
+SCRIPT_COMMAND_EMOTE = 1 
+datalong: The emote ID to play. 
+
+
+
+SCRIPT_COMMAND_FIELD_SET = 2 
+datalong: Index of the field. 
+datalong2: Value to place at the index. 
+
+
+
+SCRIPT_COMMAND_MOVE_TO = 3 
+datalong2: Length of the motion. 
+x: X position to move to. 
+y: Y position to move to. 
+z: Z position to move to. 
+o: Orientation to face. 
+
+
+
+SCRIPT_COMMAND_FLAG_SET = 4 
+datalong: Field index to be set. 
+datalong2: Flag bit (s) to set. 
+
+
+
+SCRIPT_COMMAND_FLAG_REMOVE = 5 
+datalong: Field index to be unset. 
+datalong2: Flag bit (s) to unset. 
+
+
+
+SCRIPT_COMMAND_TELEPORT_TO = 6 
+datalong: Target Map ID. See Maps.dbc 
+x: Teleport target x coordinate. 
+y: Teleport target y coordinate. 
+z: Teleport target z coordinate. 
+o: Teleport target orientation. 
+
+
+
+SCRIPT_COMMAND_QUEST_EXPLORED = 7 
+datalong: Quest ID whose external status should be satisfied 
+datalong2: Distance away from the NPC / object that the player can be and have the script still take effect 
+
+
+
+SCRIPT_COMMAND_KILL_CREDIT = 8 
+datalong: Kill credit entry for quest (entry in quest_template.ReqCreatureOrGOId) 
+datalong2: 0 = personal credit, 1 = group credit 
+
+
+
+SCRIPT_COMMAND_RESPAWN_GAMEOBJECT = 9 
+datalong: Guid of the gameobject to respawn. See gameobject.guid .
+datalong2: Despawn time in seconds. If the value is <5 seconds: 5 is used instead.
+
+
+
+SCRIPT_COMMAND_TEMP_SUMMON_CREATURE = 10 
+datalong: Entry of the summoned Creature from creature_template.entry .
+datalong2: Despawn time in ms. 
+data_flags: summon as active object = 0x01 
+x: Summon target x coordinate. 
+y: Summon target y coordinate. 
+z: Summon target z coordinate. 
+o: Summon target orientation. 
+
+
+
+SCRIPT_COMMAND_OPEN_DOOR = 11 
+datalong: Guid of the activated door. It's a gameobject.guid .
+datalong2: Delay before closing again the door. If the value is <5 seconds: 5 is used instead.
+
+
+
+SCRIPT_COMMAND_CLOSE_DOOR = 12 
+datalong: Guid of the activated door. It's a gameobject.guid .
+datalong2: Delay before opening again the door. If the value is <5 seconds: 5 is used instead.
+
+
+
+SCRIPT_COMMAND_ACTIVATE_OBJECT = 13 
+The source must be a unit and the target a game object. 
+
+
+
+SCRIPT_COMMAND_REMOVE_AURA = 14 
+datalong: Spell ID. 
+datalong2: If value> 0, then cast on the source; otherwise cast on the target. 
+
+
+
+SCRIPT_COMMAND_CAST_SPELL = 15 
+datalong: Spell ID. 
+datalong2: Source / target cast spell at target / source (0: s-> t 1: s-> s 2: t-> t 3: t-> s 4: cast triggered). 
+
+
+
+SCRIPT_COMMAND_PLAY_SOUND = 16 
+datalong: Sound ID. 
+datalong2: bitmask: 0 / 1 = anyone / target, 0 / 2 = with distance dependent, so 1 | 2 = 3 is target with distance dependent. 
+Side note: Source may be any object / npc. Target may be any player. 
+
+
+
+
+SCRIPT_COMMAND_CREATE_ITEM = 17 
+datalong: Item ID. 
+datalong2: Amount. 
+Side note: Source or target have to be a player. 
+
+
+
+
+SCRIPT_COMMAND_DESPAWN_SELF = 18 
+datalong: despawn delay. 
+Side note: Source or target must be creature. 
+
+
+
+
+SCRIPT_COMMAND_PLAY_MOVIE = 19 
+datalong: movie_id. See Movie.dbc.
+
+
+
+SCRIPT_COMMAND_MOVEMENT = 20 
+datalong: can be 0: no movement, 1: occasional, 2: the point of movement. If 2, then the substance should be recorded in creature_movement_template .
+datalong2: Optional entry of substance. 
+datalong3: search radius beings, if we use datalong2. 
+Side note: The command to start moving the source of the script. If the source - does not exist, but the goal - yes, then apply to the target. You can specify the entry being in datalong2 and start a movement if it is near (the search radius specified in datalong3). 
+
+
+
+
+SCRIPT_COMMAND_SET_ACTIVEOBJECT = 21 
+datalong: bool 0 = off, 1 = on. 
+datalong2: creature entry. 
+datalong3: search radius. 
+
+
+
+SCRIPT_COMMAND_SET_FACTION = 22 
+datalong: factionId. 
+datalong2: creature entry. 
+datalong3: search radius. 
+
+
+
+SCRIPT_COMMAND_MORPH_TO_ENTRY_OR_MODEL = 23 
+datalong: creature entry / modelid (depend on data_flags). 
+datalong2: creature entry. 
+datalong3: search radius. 
+data_flags: 0x01 to use datalong value as modelid explicit. 
+
+
+
+SCRIPT_COMMAND_MOUNT_TO_ENTRY_OR_MODEL = 24 
+datalong: creature entry / modelid (depend on data_flags). 
+datalong2: creature entry. 
+datalong3: search radius. 
+data_flags: 0x01 to use datalong value as modelid explicit. 
+
+
+
+SCRIPT_COMMAND_SET_RUN = 25 
+datalong: bool 0 = off, 1 = on. 
+datalong2: creature entry. 
+datalong3: search radius. 
+comments
+Comments. 
 
 
